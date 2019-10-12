@@ -3,11 +3,13 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		A5141CB0059AEBD6C6CC3757 /* Pods_sine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D8C84AAEF65B9F6B7CD1B0A /* Pods_sine.framework */; };
+		AC065E8123515919002C23DB /* MovieDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC065E8023515919002C23DB /* MovieDetailViewController.swift */; };
+		AC065E8323515997002C23DB /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC065E8223515997002C23DB /* TableViewController.swift */; };
 		BC1128892350E3A10059EAAF /* MovieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1128882350E3A10059EAAF /* MovieTableViewCell.swift */; };
 		BC11288F2350E53C0059EAAF /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = BC11288E2350E53C0059EAAF /* Podfile */; };
 		BC1128912350E6500059EAAF /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC1128902350E6500059EAAF /* AppState.swift */; };
@@ -18,12 +20,13 @@
 		BC216EFB234E5BEF005903C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BC216EFA234E5BEF005903C4 /* Assets.xcassets */; };
 		BC216EFE234E5BEF005903C4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BC216EFC234E5BEF005903C4 /* LaunchScreen.storyboard */; };
 		BC216F26234E65C4005903C4 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC216F25234E65C4005903C4 /* CartViewController.swift */; };
-		BC216F28234E684C005903C4 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BC216F27234E684C005903C4 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		29AEDF0D93A276EDFD8F6C7B /* Pods-sine.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sine.debug.xcconfig"; path = "Target Support Files/Pods-sine/Pods-sine.debug.xcconfig"; sourceTree = "<group>"; };
 		7D8C84AAEF65B9F6B7CD1B0A /* Pods_sine.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_sine.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC065E8023515919002C23DB /* MovieDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewController.swift; sourceTree = "<group>"; };
+		AC065E8223515997002C23DB /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		BC1128882350E3A10059EAAF /* MovieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieTableViewCell.swift; sourceTree = "<group>"; };
 		BC11288E2350E53C0059EAAF /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
 		BC1128902350E6500059EAAF /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
@@ -36,7 +39,6 @@
 		BC216EFD234E5BEF005903C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BC216EFF234E5BEF005903C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BC216F25234E65C4005903C4 /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		BC216F27234E684C005903C4 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		E24926786BBDAE9F795D9429 /* Pods-sine.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-sine.release.xcconfig"; path = "Target Support Files/Pods-sine/Pods-sine.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -58,7 +60,6 @@
 				29AEDF0D93A276EDFD8F6C7B /* Pods-sine.debug.xcconfig */,
 				E24926786BBDAE9F795D9429 /* Pods-sine.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -90,11 +91,12 @@
 				BC216EFC234E5BEF005903C4 /* LaunchScreen.storyboard */,
 				BC216EFF234E5BEF005903C4 /* Info.plist */,
 				BC216F25234E65C4005903C4 /* CartViewController.swift */,
-				BC216F27234E684C005903C4 /* TableViewController.swift */,
 				BC1128882350E3A10059EAAF /* MovieTableViewCell.swift */,
 				BC11288E2350E53C0059EAAF /* Podfile */,
 				BC1128902350E6500059EAAF /* AppState.swift */,
 				BC1128922350E7740059EAAF /* AppReducer.swift */,
+				AC065E8023515919002C23DB /* MovieDetailViewController.swift */,
+				AC065E8223515997002C23DB /* TableViewController.swift */,
 			);
 			path = sine;
 			sourceTree = "<group>";
@@ -205,16 +207,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-sine/Pods-sine-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/ReSwift/ReSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-sine/Pods-sine-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReSwift.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-sine/Pods-sine-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -231,10 +228,11 @@
 				BC1128892350E3A10059EAAF /* MovieTableViewCell.swift in Sources */,
 				BC216EF6234E5BEE005903C4 /* ViewController.swift in Sources */,
 				BC1128932350E7740059EAAF /* AppReducer.swift in Sources */,
+				AC065E8323515997002C23DB /* TableViewController.swift in Sources */,
 				BC216F26234E65C4005903C4 /* CartViewController.swift in Sources */,
+				AC065E8123515919002C23DB /* MovieDetailViewController.swift in Sources */,
 				BC1128912350E6500059EAAF /* AppState.swift in Sources */,
 				BC216EF4234E5BEE005903C4 /* AppDelegate.swift in Sources */,
-				BC216F28234E684C005903C4 /* TableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

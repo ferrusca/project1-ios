@@ -25,6 +25,7 @@ struct Sala{
 }
 
 struct Funcion{
+    var id: Int
     var sala: Sala
     var hora_inicio: String
     var hora_fin: String
@@ -39,15 +40,33 @@ struct Cartelera{
 
 var sala = Sala(tipo: "VIP", cupo_max: 50)
 var pelicula = Pelicula(poster: "imagen.jpg", titulo: "IT", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
+var pelicula1 = Pelicula(poster: "imagen.jpg", titulo: "Foo", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
+var pelicula2 = Pelicula(poster: "imagen.jpg", titulo: "Bar", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
+var pelicul3 = Pelicula(poster: "imagen.jpg", titulo: "Baz", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
 
-var funcion = Funcion(sala: sala, hora_inicio:"14:00", hora_fin: "16:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
+var funcion = Funcion(id: 1, sala: sala, hora_inicio:"14:00", hora_fin: "16:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
+var funcion1 = Funcion(id: 2, sala: sala, hora_inicio:"16:00", hora_fin: "18:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
+var funcion2 = Funcion(id: 3, sala: sala, hora_inicio:"18:00", hora_fin: "20:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
+var funcion3 = Funcion(id: 4, sala: sala, hora_inicio:"21:00", hora_fin: "23:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
 
 var cartelera = Cartelera(funciones: [funcion])
 
-struct AppState: StateType {
-    var totalPrice = 0;
-    var cart = [Funcion]()
-    var movies = [Funcion]()
+struct TotalPriceState {
+    var data: Int = 0;
 }
 
-let appStore = Store<AppState>(reducer: /* TODO */, state: nil)
+struct CartState {
+    var data: [Funcion] = [];
+}
+
+struct MoviesState {
+    var data: [Funcion] = [funcion, funcion1, funcion2, funcion3]
+}
+
+struct AppState: StateType {
+    var totalPrice: TotalPriceState;
+    var cart: CartState;
+    var movies: MoviesState;
+}
+
+let appStore = Store<AppState>(reducer: appReducer, state: nil)
