@@ -16,7 +16,6 @@ class TableViewController: UITableViewController, StoreSubscriber {
     
     // This will fetch the new state
     func newState(state: AppState) {
-        print(state)
         self.movies = state.movies.data
     }
     
@@ -52,9 +51,20 @@ class TableViewController: UITableViewController, StoreSubscriber {
         cell.filename.image = UIImage(named: self.movies[indexPath.row].pelicula.poster)
         cell.name.text = self.movies[indexPath.row].pelicula.titulo
         cell.schedule.text = self.movies[indexPath.row].hora_inicio
-        print(cell)
         return cell
      }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            print(".l.")
+        if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
+            print("HOLAAAAAAA")
+            let detailView = segue.destination as! MovieDetailViewController;
+            detailView.funcion = self.movies[selectedIndexPath.row]
+            detailView.id = self.movies[selectedIndexPath.row].id
+        } else {
+            print("ptm")
+        }
+    }
     
     /*
      // Override to support conditional editing of the table view.

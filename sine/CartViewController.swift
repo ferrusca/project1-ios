@@ -7,13 +7,28 @@
 //
 
 import UIKit
+import ReSwift
 
-class CartViewController: UIViewController {
-
+class CartViewController: UIViewController, StoreSubscriber {
+    
+    var cart: CartState!
+    var totalPrice = 0;
+    
+    let store = appStore
+    
+    func newState(state: AppState) {
+        print("Estado del carro")
+        self.cart = state.cart
+        self.totalPrice = state.totalPrice.data
+        print(self.cart!)
+        print("Precio total a pagar:")
+        print(self.totalPrice)
+    }
+    
+    
     override func viewDidLoad() {
+        store.subscribe(self)
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
     
 

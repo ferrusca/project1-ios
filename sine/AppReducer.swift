@@ -83,7 +83,7 @@ func moviesReducer(_ action: Action, _ state: MoviesState?) -> MoviesState {
         state.data[index].cupo_disponible += action.numberOf
     case let action as DecreaseAvailableSeats:
         let index = getIndexOf(state.data, id: action.id)
-        state.data[index].cupo_disponible += action.numberOf
+        state.data[index].cupo_disponible -= action.numberOf
     default:
         print("Action not registered")
         break
