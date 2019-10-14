@@ -7,12 +7,22 @@
 //
 
 import UIKit
+import ReSwift
 
-class TableViewController: UITableViewController {
+class TableViewController: UITableViewController, StoreSubscriber {
+
+    var store = appStore
+    var movies: [Funcion] = []
+    
+    // This will fetch the new state
+    func newState(state: AppState) {
+        print(state)
+        self.movies = state.movies.data
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        store.subscribe(self)
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
@@ -24,23 +34,27 @@ class TableViewController: UITableViewController {
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        //  return the number of rows
+        return 3
     }
     
-    /*
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 300
+    }
+    
+    
      override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-     let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-     
-     // Configure the cell...
-     
-     return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath) as! MovieTableViewCell;
+        cell.filename.image = UIImage(named: self.movies[indexPath.row].pelicula.poster)
+        cell.name.text = self.movies[indexPath.row].pelicula.titulo
+        cell.schedule.text = self.movies[indexPath.row].hora_inicio
+        print(cell)
+        return cell
      }
-     */
     
     /*
      // Override to support conditional editing of the table view.

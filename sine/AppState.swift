@@ -39,21 +39,23 @@ struct Cartelera{
 }
 
 var sala = Sala(tipo: "VIP", cupo_max: 50)
-var pelicula = Pelicula(poster: "imagen.jpg", titulo: "IT", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
-var pelicula1 = Pelicula(poster: "imagen.jpg", titulo: "Foo", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
-var pelicula2 = Pelicula(poster: "imagen.jpg", titulo: "Bar", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
-var pelicul3 = Pelicula(poster: "imagen.jpg", titulo: "Baz", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
+var pelicula = Pelicula(poster: "god", titulo: "IT", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
+var pelicula1 = Pelicula(poster: "cherry", titulo: "Foo", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
+var pelicula2 = Pelicula(poster: "joker", titulo: "Bar", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
+var pelicula3 = Pelicula(poster: "cherry", titulo: "Baz", clasificacion: "B15", duracion: 120, sinopsis: "El payaso que espanta", genero: "terror", valoracion: 4.0)
 
 var funcion = Funcion(id: 1, sala: sala, hora_inicio:"14:00", hora_fin: "16:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
-var funcion1 = Funcion(id: 2, sala: sala, hora_inicio:"16:00", hora_fin: "18:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
-var funcion2 = Funcion(id: 3, sala: sala, hora_inicio:"18:00", hora_fin: "20:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
-var funcion3 = Funcion(id: 4, sala: sala, hora_inicio:"21:00", hora_fin: "23:00", pelicula: pelicula, cupo_disponible: 40, precio: 70)
+var funcion1 = Funcion(id: 2, sala: sala, hora_inicio:"16:00", hora_fin: "18:00", pelicula: pelicula1, cupo_disponible: 40, precio: 70)
+var funcion2 = Funcion(id: 3, sala: sala, hora_inicio:"18:00", hora_fin: "20:00", pelicula: pelicula2, cupo_disponible: 40, precio: 70)
+var funcion3 = Funcion(id: 4, sala: sala, hora_inicio:"21:00", hora_fin: "23:00", pelicula: pelicula3, cupo_disponible: 40, precio: 70)
 
 var cartelera = Cartelera(funciones: [funcion])
 
 struct TotalPriceState {
     var data: Int = 0;
 }
+
+
 
 struct CartState {
     var data: [Funcion] = [];
