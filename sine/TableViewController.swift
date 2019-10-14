@@ -55,14 +55,10 @@ class TableViewController: UITableViewController, StoreSubscriber {
      }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            print(".l.")
         if let selectedIndexPath = self.tableView.indexPathForSelectedRow {
-            print("HOLAAAAAAA")
             let detailView = segue.destination as! MovieDetailViewController;
             detailView.funcion = self.movies[selectedIndexPath.row]
             detailView.id = self.movies[selectedIndexPath.row].id
-        } else {
-            print("ptm")
         }
     }
     
